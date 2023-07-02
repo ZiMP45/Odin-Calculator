@@ -19,6 +19,7 @@ body {
     font-size: 48px;
     margin: auto;
     color: white;
+    text-shadow: #FCE600 1px 0 10px;
 }
 
 .buttons {
