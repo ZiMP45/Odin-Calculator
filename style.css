@@ -24,16 +24,23 @@ body {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 148px);
-    grid-template-rows: repeat(4, 60px);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 60px);
 }
 
-.buttons .enter {
+.buttons .output {
+    background-color: white;
+    grid-column: span 4;
+}
+
+.buttons .zero {
     grid-column: span 2;
 }
 
 .one, .two, .three, .four, .five, .six, 
-.seven, .eight, .nine, .enter, .zero {
+.seven, .eight, .nine, .enter, .zero, .period,
+.off, .clear, .square, .divide, .multiply,
+.subtract, .add {
     background-color: black;
     color: white;
 }
