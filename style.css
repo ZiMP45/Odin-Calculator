@@ -1,0 +1,27 @@
+/* * {
+    border: 1px solid black;
+} */
+
+.app {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 240px);
+    grid-template-columns: auto;
+}
+
+.header,
+.footer,
+.calculator {
+    font-size: 48px;
+    margin: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 148px);
+    grid-template-rows: repeat(4, 60px);
+}
+
+.buttons .enter {
+    grid-column: span 2;
+}
