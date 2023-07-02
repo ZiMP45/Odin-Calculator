@@ -1,22 +1,22 @@
 /* * {
-    border: 1px solid black;
+    border: 1px solid white;
 } */
 
 body {
-    background-color: #424242;
+    background-color: black;
 }
 
 .app {
     display: grid;
     justify-content: center;
-    grid-template-rows: repeat(3, 240px);
+    align-items: center;
+    grid-template-rows: repeat(3, 200px);
     grid-template-columns: auto;
 }
 
 .header,
-.footer,
-.calculator {
-    font-size: 48px;
+.footer {
+    font-size: 36px;
     margin: auto;
     color: white;
     text-shadow: #FCE600 1px 0 10px;
@@ -24,13 +24,19 @@ body {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(6, 60px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(6, 80px);
+    grid-gap: 12px;
 }
 
 .buttons .output {
-    background-color: white;
+    display: flex;
+    background-color: black;
+    color: white;
     grid-column: span 4;
+    justify-content: right;
+    align-items: end;
+    font-size: 48px;
 }
 
 .buttons .zero {
@@ -41,6 +47,22 @@ body {
 .seven, .eight, .nine, .enter, .zero, .period,
 .off, .clear, .square, .divide, .multiply,
 .subtract, .add {
-    background-color: black;
     color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 32px;
+}
+
+.off, .clear, .square {
+    background-color: darkgray;
+    color: black;
+}
+
+.one, .two, .three, .four, .five, .six, 
+.seven, .eight, .nine, .zero, .period {
+    background-color: #424242;
+}
+
+.divide, .multiply, .subtract, .add, .enter {
+    background-color: orange;
 }
