@@ -40,30 +40,26 @@ body {
     font-size: 48px;
 }
 
-.buttons .zero {
+[data-key='0'] {
     grid-column: span 2;
 }
 
-.one, .two, .three, .four, .five, .six, 
-.seven, .eight, .nine, .enter, .zero, .period,
-.off, .clear, .square, .divide, .multiply,
-.subtract, .add {
+[data-key], .operator, .function {
     color: white;
     border-radius: 50px;
     border: none;
     font-size: 32px;
 }
 
-.off, .clear, .square {
+.function {
     background-color: darkgray;
     color: black;
 }
 
-.one, .two, .three, .four, .five, .six, 
-.seven, .eight, .nine, .zero, .period {
+[data-key] {
     background-color: #424242;
 }
 
-.divide, .multiply, .subtract, .add, .enter {
+.operator {
     background-color: orange;
 }

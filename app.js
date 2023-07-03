@@ -23,7 +23,7 @@ buttons.forEach((button) => {
             button.style.border = "none";
         }
 
-        let value = button.textContent;
+        let value = button.dataset.key;
         
         arr.push(value);
         let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue );
