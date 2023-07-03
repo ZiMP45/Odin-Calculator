@@ -5,6 +5,7 @@
 
 const buttons = document.querySelectorAll('button');
 const output = document.querySelector('.output');
+let arr = [];
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -23,12 +24,13 @@ buttons.forEach((button) => {
         }
 
         let value = button.textContent;
-
-        updateOutput(value);
-
+        
+        arr.push(value);
+        let joinedValues = arr.reduce(joinValues);
+        output.textContent = joinedValues;
     })
 })
 
-function updateOutput(value) {
-    output.textContent = value;
+function joinValues(accumulator, currentValue) {
+        return accumulator + currentValue;
 }
