@@ -28,5 +28,7 @@ buttons.forEach((button) => {
         arr.push(value);
         let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue );
         output.textContent = joinedValues;
+
     })
 })
+
