@@ -45,6 +45,8 @@ buttons.forEach((button) => {
                     return a * b;
                 case '/':
                     return a / b;
+                case '^':
+                    return Math.pow(a, b);
             }
         }
     })
@@ -52,21 +54,21 @@ buttons.forEach((button) => {
 
 
 
-// buttons.forEach((button) => {
-//     button.addEventListener('click', () => {
-//         button.onclick = transformButton();
-//         setTimeout(resetButton, 100);
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        button.onclick = transformButton();
+        setTimeout(resetButton, 100);
 
-//         function transformButton() {
-//             button.style.transform = "scale(0.97)";
-//             button.style.transition = "transform 0.2 ease";
-//             button.style.border = "2px solid white";
-//         }
+        function transformButton() {
+            button.style.transform = "scale(0.97)";
+            button.style.transition = "transform 0.2 ease";
+            button.style.border = "2px solid white";
+        }
 
-//         function resetButton() {
-//             button.style.transform = "scale(1.0)";
-//             button.style.border = "none";
-//         }
-//     })
-// })
+        function resetButton() {
+            button.style.transform = "scale(1.0)";
+            button.style.border = "none";
+        }
+    })
+})
 

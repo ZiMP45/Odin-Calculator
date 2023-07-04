@@ -44,14 +44,14 @@ body {
     grid-column: span 2;
 }
 
-[data-key], .operator, .function, .equal {
+[data-key], .operator, .allClear, .delete, .equal {
     color: white;
     border-radius: 50px;
     border: none;
     font-size: 32px;
 }
 
-.function {
+.allClear, .delete {
     background-color: darkgray;
     color: black;
 }
