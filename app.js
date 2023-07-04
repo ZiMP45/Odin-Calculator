@@ -9,7 +9,7 @@ let value = 0;
 let arr = [];
 let operator = '';
 const buttons = document.querySelectorAll('button');
-const outputButtons = document.querySelectorAll('.equal');
+const output = document.querySelector('.output');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -19,9 +19,10 @@ buttons.forEach((button) => {
             arr = [];
         } else if (button.classList.contains('equal')) {
             secondNum = reduceArray(arr);
-            console.log(runEquation(parseInt(firstNum), parseInt(secondNum), operator));
+            output.textContent = runEquation(parseInt(firstNum), parseInt(secondNum), operator);
         } else {
             button.onclick = getValue();
+            output.textContent = reduceArray(arr);
         }
         
         function getValue() {
