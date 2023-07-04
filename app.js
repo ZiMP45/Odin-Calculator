@@ -11,26 +11,45 @@ let operator = '';
 const buttons = document.querySelectorAll('button');
 const outputButtons = document.querySelectorAll('.equal');
 
-if (buttons.classList.contains('operator')) {
-    operator = button.textContent;
-    firstNum = reduceArray(arr);
-    arr = [];
-    buttons.onclick - getValue();
-} else if (buttons.classList.contains('.enter')) {
-    secondNum = reduceArray(arr);
-} else {
-    buttons.onclick = getValue();
-}
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.classList.contains('operator')) {
+            operator = button.textContent;
+            firstNum = reduceArray(arr);
+            arr = [];
+        } else if (button.classList.contains('equal')) {
+            secondNum = reduceArray(arr);
+            console.log(runEquation(parseInt(firstNum), parseInt(secondNum), operator));
+        } else {
+            button.onclick = getValue();
+        }
+        
+        function getValue() {
+            value = button.dataset.key
+            arr.push(value);
+        }
+        
+        function reduceArray(arr) {
+            let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+            return joinedValues;
+        };
 
-function getValue() {
-    value = button.dataset.key
-    arr.push(value);
-}
+        function runEquation(a, b, operator) {
+            switch(operator) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case 'x':
+                    return a * b;
+                case '/':
+                    return a / b;
+            }
+        }
+    })
+})
 
-function reduceArray(arr) {
-    let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
-    return joinedValues;
-};
+
 
 // buttons.forEach((button) => {
 //     button.addEventListener('click', () => {

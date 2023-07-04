@@ -44,7 +44,7 @@ body {
     grid-column: span 2;
 }
 
-[data-key], .operator, .function {
+[data-key], .operator, .function, .equal {
     color: white;
     border-radius: 50px;
     border: none;
@@ -60,6 +60,6 @@ body {
     background-color: #424242;
 }
 
-.operator {
+.operator, .equal {
     background-color: orange;
 }
