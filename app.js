@@ -1,10 +1,10 @@
-// on click, push that button value to an array for numbers
-// add functions to operator buttons
-// leave off button alone for now
-// on click, whatever button is pressed add to output box
+// for multiple operator equations, conduct first calculation, 
+// update runEquation and output total to display, then use that value as newFirst
+// as a in next runEquation to make more complex calculations.
 
 let firstNum = 0;
 let secondNum = 0;
+let newFirst = 0;
 let value = 0;
 let arr = [];
 let operator = '';
@@ -57,8 +57,6 @@ buttons.forEach((button) => {
         }
     })
 })
-
-
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
