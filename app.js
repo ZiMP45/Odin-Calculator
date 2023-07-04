@@ -20,10 +20,16 @@ buttons.forEach((button) => {
         } else if (button.classList.contains('equal')) {
             secondNum = reduceArray(arr);
             output.textContent = runEquation(parseInt(firstNum), parseInt(secondNum), operator);
+        } else if (button.classList.contains('allClear')) {
+            output.textContent = '';
+            arr = [];
+            firstNum = 0;
+            secondNum = 0;
+            value = 0; 
         } else {
             button.onclick = getValue();
             output.textContent = reduceArray(arr);
-        }
+        } 
         
         function getValue() {
             value = button.dataset.key
