@@ -3,32 +3,50 @@
 // leave off button alone for now
 // on click, whatever button is pressed add to output box
 
-const buttons = document.querySelectorAll('button');
-const output = document.querySelector('.output');
+let firstNum = 0;
+let secondNum = 0;
+let value = 0;
 let arr = [];
+let operator = '';
+const buttons = document.querySelectorAll('button');
+const outputButtons = document.querySelectorAll('.equal');
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        button.onclick = transformButton();
-        setTimeout(resetButton, 100);
+if (buttons.classList.contains('operator')) {
+    operator = button.textContent;
+    firstNum = reduceArray(arr);
+    arr = [];
+    buttons.onclick - getValue();
+} else if (buttons.classList.contains('.enter')) {
+    secondNum = reduceArray(arr);
+} else {
+    buttons.onclick = getValue();
+}
 
-        function transformButton() {
-            button.style.transform = "scale(0.97)";
-            button.style.transition = "transform 0.2 ease";
-            button.style.border = "2px solid white";
-        }
+function getValue() {
+    value = button.dataset.key
+    arr.push(value);
+}
 
-        function resetButton() {
-            button.style.transform = "scale(1.0)";
-            button.style.border = "none";
-        }
+function reduceArray(arr) {
+    let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+    return joinedValues;
+};
 
-        let value = button.dataset.key;
-        
-        arr.push(value);
-        let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue );
-        output.textContent = joinedValues;
+// buttons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//         button.onclick = transformButton();
+//         setTimeout(resetButton, 100);
 
-    })
-})
+//         function transformButton() {
+//             button.style.transform = "scale(0.97)";
+//             button.style.transition = "transform 0.2 ease";
+//             button.style.border = "2px solid white";
+//         }
+
+//         function resetButton() {
+//             button.style.transform = "scale(1.0)";
+//             button.style.border = "none";
+//         }
+//     })
+// })
 

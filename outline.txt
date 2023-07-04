@@ -1,0 +1,38 @@
+- add listener to each button
+- on each button, send value to array
+    let firstNum = 0;
+    let secondNum = 0;
+    let value = 0;
+    let arr = [];
+    let operator = '';
+    const buttons = document.querySelectorAll('button');
+    const outputButtons = document.querySelectorAll('.equal)
+
+    if (buttons.classList.contains('operator')) {
+        operator = button.textContent;
+        firstNum = reduceArray(arr);
+        arr = [];
+        buttons.onclick - getValue();
+    } else if (buttons.classList.contains('.enter')) {
+        secondNum = reduceArray(arr);
+    } else {
+        buttons.onclick = getValue();
+    }
+    
+    function getValue() {
+        value = button.dataset.key
+        arr.push(value);
+    }
+
+    function reduceArray(arr) {
+        let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+        return joinedValues;
+    };
+
+- when operator button pushed, reduce array to single number
+- send that single number to first value, save the operator
+- once operator button is pushed, start building next array
+- when is pressed, reduce next array down to single number
+- send numbers and operator to calculate function
+    - switch statement, if operator is ___ use corresponding function
+- return new value and push to output textContent
