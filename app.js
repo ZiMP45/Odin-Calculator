@@ -74,19 +74,19 @@ function runEquation(a, b, operator) {
     switch(operator) {
         case '+':
             newFirst = a + b;
-            return newFirst;
+            break;
         case '-':
             newFirst = a - b;
-            return newFirst;
+            break;
         case 'x':
             newFirst = a * b;
-            return newFirst;
+            break;
         case '/':
             newFirst = a / b;
-            return newFirst;
+            break;
         case '^':
             newFirst = Math.pow(a, b);
-            return newFirst;
+            break;
     }
 }
 
