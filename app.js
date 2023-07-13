@@ -76,13 +76,17 @@ function runEquation(a, b, operator) {
             newFirst = a + b;
             return newFirst;
         case '-':
-            return a - b;
+            newFirst = a - b;
+            return newFirst;
         case 'x':
-            return a * b;
+            newFirst = a * b;
+            return newFirst;
         case '/':
-            return a / b;
+            newFirst = a / b;
+            return newFirst;
         case '^':
-            return Math.pow(a, b);
+            newFirst = Math.pow(a, b);
+            return newFirst;
     }
 }
 
