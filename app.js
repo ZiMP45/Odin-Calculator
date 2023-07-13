@@ -27,20 +27,9 @@ buttons.forEach((button) => {
             secondNum = 0;
             value = 0; 
         } else {
-            button.onclick = getValue();
+            button.onclick = getValue(button);
             output.textContent = reduceArray(arr);
         } 
-        
-        function getValue() {
-            value = button.dataset.key
-            arr.push(value);
-        }
-        
-        function reduceArray(arr) {
-            let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
-            return joinedValues;
-        };
-
     })
 })
 
@@ -48,19 +37,32 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         button.onclick = transformButton();
         setTimeout(resetButton, 100);
+
+        function transformButton() {
+            button.style.transform = "scale(0.97)";
+            button.style.transition = "transform 0.2 ease";
+            button.style.border = "2px solid white";
+            
+        }
+        
+        function resetButton() {
+            button.style.transform = "scale(1.0)";
+            button.style.border = "none";
+        }
     })
 })
 
-function transformButton() {
-    button.style.transform = "scale(0.97)";
-    button.style.transition = "transform 0.2 ease";
-    button.style.border = "2px solid white";
+function getValue(button) {
+    value = button.dataset.key
+    arr.push(value);
 }
 
-function resetButton() {
-    button.style.transform = "scale(1.0)";
-    button.style.border = "none";
-}
+function reduceArray(arr) {
+    let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+    return joinedValues;
+};
+
+
 
 function runEquation(a, b, operator) {
     switch(operator) {
