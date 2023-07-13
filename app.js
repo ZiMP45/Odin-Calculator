@@ -19,7 +19,13 @@ buttons.forEach((button) => {
             arr = [];
         } else if (button.classList.contains('equal')) {
             secondNum = reduceArray(arr);
-            output.textContent = runEquation(parseInt(firstNum), parseInt(secondNum), operator);
+            if (newFirst == '0') {
+                runEquation(parseInt(firstNum), parseInt(secondNum), operator);
+            } else {
+                runEquation(parseInt(newFirst), parseInt(secondNum), operator);
+            }
+            
+            output.textContent = newFirst;
         } else if (button.classList.contains('allClear')) {
             output.textContent = '';
             arr = [];
@@ -67,7 +73,8 @@ function reduceArray(arr) {
 function runEquation(a, b, operator) {
     switch(operator) {
         case '+':
-            return a + b;
+            newFirst = a + b;
+            return newFirst;
         case '-':
             return a - b;
         case 'x':
