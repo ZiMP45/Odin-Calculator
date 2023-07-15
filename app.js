@@ -34,6 +34,7 @@ buttons.forEach((button) => {
             arr = [];
             firstNum = 0;
             secondNum = 0;
+            newFirst = 0;
             value = 0; 
         } else {
             button.onclick = getValue(button);
@@ -51,7 +52,6 @@ function reduceArray(arr) {
     let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
     return joinedValues;
 };
-
 
 
 function runEquation(a, b, operator) {
