@@ -1,6 +1,9 @@
-// for multiple operator equations, conduct first calculation, 
-// update runEquation and output total to display, then use that value as newFirst
-// as a in next runEquation to make more complex calculations.
+// Limited on how the calculator function works. Will only update the value once the equals
+// is pressed and even then, you can only do one operation at a time rather than constantly updating 
+// the value. Look into either using an object somehow, or break the whole thing down into much simpler pieces.
+// https://www.section.io/engineering-education/building-a-calculator-a-javascript-project-for-beginners/
+// Classes also seem to be recurring theme on things I've looked into.
+// Right now, my brain is just not there after vacation.
 
 let firstNum = 0;
 let secondNum = 0;
@@ -36,25 +39,6 @@ buttons.forEach((button) => {
             button.onclick = getValue(button);
             output.textContent = reduceArray(arr);
         } 
-    })
-})
-
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        button.onclick = transformButton();
-        setTimeout(resetButton, 100);
-
-        function transformButton() {
-            button.style.transform = "scale(0.97)";
-            button.style.transition = "transform 0.2 ease";
-            button.style.border = "2px solid white";
-            
-        }
-        
-        function resetButton() {
-            button.style.transform = "scale(1.0)";
-            button.style.border = "none";
-        }
     })
 })
 
