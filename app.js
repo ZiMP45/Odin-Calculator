@@ -5,14 +5,14 @@
 // Classes also seem to be recurring theme on things I've looked into.
 // Right now, my brain is just not there after vacation.
 
+const buttons = document.querySelectorAll('button');
+const output = document.querySelector('.output');
 let firstNum = 0;
 let secondNum = 0;
 let newFirst = 0;
 let value = 0;
 let arr = [];
 let operator = '';
-const buttons = document.querySelectorAll('button');
-const output = document.querySelector('.output');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
