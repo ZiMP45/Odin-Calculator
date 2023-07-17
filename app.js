@@ -7,6 +7,7 @@
 
 const buttons = document.querySelectorAll('button');
 const output = document.querySelector('.output');
+const equation = document.querySelector('.equation');
 let firstNum = 0;
 let secondNum = 0;
 let newFirst = 0;
@@ -19,6 +20,7 @@ buttons.forEach((button) => {
         if (button.classList.contains('operator')) {
             operator = button.textContent;
             firstNum = reduceArray(arr);
+            equation.textContent = firstNum;
             arr = [];
         } else if (button.classList.contains('equal')) {
             secondNum = reduceArray(arr);
@@ -50,13 +52,13 @@ function reduceArray(arr) {
 
 function clearValues() {
     output.textContent = '';
+    equation.textContent = '';
     arr = [];
     firstNum = 0;
     secondNum = 0;
     newFirst = 0;
     value = 0;
 }
-
 
 function runEquation(a, b, operator) {
     switch(operator) {
