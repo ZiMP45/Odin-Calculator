@@ -30,12 +30,7 @@ buttons.forEach((button) => {
             
             output.textContent = newFirst;
         } else if (button.classList.contains('allClear')) {
-            output.textContent = '';
-            arr = [];
-            firstNum = 0;
-            secondNum = 0;
-            newFirst = 0;
-            value = 0; 
+            clearValues();
         } else {
             button.onclick = getValue(button);
             output.textContent = reduceArray(arr);
@@ -51,7 +46,16 @@ function getValue(button) {
 function reduceArray(arr) {
     let joinedValues = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
     return joinedValues;
-};
+}
+
+function clearValues() {
+    output.textContent = '';
+    arr = [];
+    firstNum = 0;
+    secondNum = 0;
+    newFirst = 0;
+    value = 0;
+}
 
 
 function runEquation(a, b, operator) {
