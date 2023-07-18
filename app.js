@@ -17,11 +17,11 @@ let operator = '';
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        findValue(button);
+        calculator(button);
     })
 })
 
-function findValue(button) {
+function calculator(button) {
     if (button.classList.contains('operator')) {
         operator = button.textContent;
         firstNum = reduceArray(arr);
@@ -78,7 +78,7 @@ function runEquation(a, b, operator) {
     switch(operator) {
         case '+':
             total = a + b;
-            break;
+            return total;
         case '-':
             total = a - b;
             break;
