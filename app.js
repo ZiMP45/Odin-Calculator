@@ -1,10 +1,3 @@
-// Limited on how the calculator function works. Will only update the value once the equals
-// is pressed and even then, you can only do one operation at a time rather than constantly updating 
-// the value. Look into either using an object somehow, or break the whole thing down into much simpler pieces.
-// https://www.section.io/engineering-education/building-a-calculator-a-javascript-project-for-beginners/
-// Classes also seem to be recurring theme on things I've looked into.
-// Right now, my brain is just not there after vacation.
-
 const buttons = document.querySelectorAll('button');
 const output = document.querySelector('.output');
 const history = document.querySelector('.history');
