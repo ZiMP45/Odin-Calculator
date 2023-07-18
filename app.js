@@ -7,10 +7,10 @@
 
 const buttons = document.querySelectorAll('button');
 const output = document.querySelector('.output');
-const equation = document.querySelector('.equation');
+const history = document.querySelector('.history');
 let firstNum = 0;
 let secondNum = 0;
-let newFirst = 0;
+let total = 0;
 let value = 0;
 let arr = [];
 let operator = '';
@@ -20,19 +20,21 @@ buttons.forEach((button) => {
         if (button.classList.contains('operator')) {
             operator = button.textContent;
             firstNum = reduceArray(arr);
-            equation.textContent = firstNum;
             arr = [];
         } else if (button.classList.contains('equal')) {
             secondNum = reduceArray(arr);
-            if (newFirst == '0') {
+            if (total == '0') {
                 runEquation(parseInt(firstNum), parseInt(secondNum), operator);
             } else {
-                runEquation(parseInt(newFirst), parseInt(secondNum), operator);
+                runEquation(parseInt(total), parseInt(secondNum), operator);
             }
             
-            output.textContent = newFirst;
+            output.textContent = total;
+            firstNum = total;
+            secondNum = 0;
+            arr = [];
         } else if (button.classList.contains('allClear')) {
-            clearValues();
+            allClear();
         } else {
             button.onclick = getValue(button);
             output.textContent = reduceArray(arr);
@@ -50,32 +52,40 @@ function reduceArray(arr) {
     return joinedValues;
 }
 
-function clearValues() {
+function allClear() {
     output.textContent = '';
-    equation.textContent = '';
+    history.textContent = '';
     arr = [];
     firstNum = 0;
     secondNum = 0;
-    newFirst = 0;
+    total = 0;
     value = 0;
+}
+
+function clearValues () {
+    firstNum = 0;
+    secondNum = 0;
+    total = 0;
+    arr = [];
+    operator = '';
 }
 
 function runEquation(a, b, operator) {
     switch(operator) {
         case '+':
-            newFirst = a + b;
+            total = a + b;
             break;
         case '-':
-            newFirst = a - b;
+            total = a - b;
             break;
         case 'x':
-            newFirst = a * b;
+            total = a * b;
             break;
         case '/':
-            newFirst = a / b;
+            total = a / b;
             break;
         case '^':
-            newFirst = Math.pow(a, b);
+            total = Math.pow(a, b);
             break;
     }
 }
