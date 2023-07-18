@@ -28,6 +28,7 @@ function calculator(button) {
         arr = [];
     } else if (button.classList.contains('equal')) {
         secondNum = reduceArray(arr);
+        
         if (total == '0') {
             runEquation(parseInt(firstNum), parseInt(secondNum), operator);
         } else {
