@@ -17,30 +17,34 @@ let operator = '';
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (button.classList.contains('operator')) {
-            operator = button.textContent;
-            firstNum = reduceArray(arr);
-            arr = [];
-        } else if (button.classList.contains('equal')) {
-            secondNum = reduceArray(arr);
-            if (total == '0') {
-                runEquation(parseInt(firstNum), parseInt(secondNum), operator);
-            } else {
-                runEquation(parseInt(total), parseInt(secondNum), operator);
-            }
-            
-            output.textContent = total;
-            firstNum = total;
-            secondNum = 0;
-            arr = [];
-        } else if (button.classList.contains('allClear')) {
-            allClear();
-        } else {
-            button.onclick = getValue(button);
-            output.textContent = reduceArray(arr);
-        } 
+        findValue(button);
     })
 })
+
+function findValue(button) {
+    if (button.classList.contains('operator')) {
+        operator = button.textContent;
+        firstNum = reduceArray(arr);
+        arr = [];
+    } else if (button.classList.contains('equal')) {
+        secondNum = reduceArray(arr);
+        if (total == '0') {
+            runEquation(parseInt(firstNum), parseInt(secondNum), operator);
+        } else {
+            runEquation(parseInt(total), parseInt(secondNum), operator);
+        }
+        
+        output.textContent = total;
+        firstNum = total;
+        secondNum = 0;
+        arr = [];
+    } else if (button.classList.contains('allClear')) {
+        allClear();
+    } else {
+        button.onclick = getValue(button);
+        output.textContent = reduceArray(arr);
+    } 
+}
 
 function getValue(button) {
     value = button.dataset.key
